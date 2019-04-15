@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  startPositionX: 1
+  startPositionY: 1
+
+two:
+  name: MyString
+  startPositionX: 1
+  startPositionY: 1
