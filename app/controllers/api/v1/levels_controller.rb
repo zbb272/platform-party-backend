@@ -8,7 +8,6 @@ class Api::V1::LevelsController < ApplicationController
   end
 
   def create
-    byebug
     render json: Level.create(level_params)
   end
 
