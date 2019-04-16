@@ -8,8 +8,9 @@ class Api::V1::LevelsController < ApplicationController
   end
 
   def create
-    byebug
-    render json: Level.create(level_params)
+    l = Level.create(level_params)
+    l.scores << Score.create(value: 0)
+    render json: l
   end
 
   def update

@@ -10,6 +10,7 @@ Block.destroy_all
 Score.destroy_all
 blank_level = Level.create(name: "Blank Level", startPositionX: 0, startPositionY: 0)
 blank_level.scores << Score.create(value: 0)
+blank_level.blocks << Block.create(x: 0, y: 100, width: 100, height: 5, style: "orange", status: "platform")
 
 test_level = Level.create(name: "Test Level", startPositionX: 30, startPositionY: 400)
 test_level.scores << Score.create(value: 0)
