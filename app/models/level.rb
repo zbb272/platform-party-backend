@@ -1,6 +1,7 @@
 class Level < ApplicationRecord
   has_many :blocks
   has_many :scores
+  accepts_nested_attributes_for :blocks
 
   def high_score
     max = self.scores.first
