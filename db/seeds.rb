@@ -7,7 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Level.destroy_all
 Block.destroy_all
+Score.destroy_all
+blank_level = Level.create(name: "Blank Level", startPositionX: 0, startPositionY: 0)
+blank_level.scores << Score.create(value: 0)
+
 test_level = Level.create(name: "Test Level", startPositionX: 30, startPositionY: 400)
+test_level.scores << Score.create(value: 0)
 
 test_level.blocks << Block.create(x: 0, y: 600, width: 150, height: 100, style: "black", status: "platform")
 test_level.blocks << Block.create(x: 300, y: 500, width: 50, height: 200, style: "black", status: "platform")
@@ -20,6 +25,7 @@ test_level.blocks << Block.create(x: 500, y: 250, width: 150, height: 10, style:
 test_level.blocks << Block.create(x: 250, y: 125, width: 150, height: 10, style: "black", status: "platform")
 
 test_level2 = Level.create(name: "Test Level 2", startPositionX: 30, startPositionY: 400)
+test_level2.scores << Score.create(value: 0)
 
 test_level2.blocks << Block.create(x: 0, y: 600, width: 1000, height: 100, style: "brown", status: "platform")
 test_level2.blocks << Block.create(x: 1000, y: 200, width: 150, height: 500, style: "brown", status: "platform")
@@ -28,6 +34,7 @@ test_level2.blocks << Block.create(x: 300, y: 250, width: 100, height: 10, style
 test_level2.blocks << Block.create(x: 500, y: 250, width: 100, height: 10, style: "brown", status: "platform")
 
 test_level3 = Level.create(name: "Test Level 3", startPositionX: 1, startPositionY: 1)
+test_level3.scores << Score.create(value: 0)
 
 test_level3.blocks << Block.create(x: 0, y: 150, width: 50, height: 500, style: "orange", status: "platform")
 
