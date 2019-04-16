@@ -21,6 +21,6 @@ class Api::V1::BlocksController < ApplicationController
   end
 
   def block_params
-    params.require(:block).permit(:x, :y, :height, :width, :status, :style, :level_id)
+    params.require(:block).permit(:level_id, :x, :y, :height, :width, :status, :style)
   end
 end
