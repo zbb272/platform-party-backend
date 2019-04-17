@@ -1,6 +1,8 @@
 class Api::V1::ScoresController < ApplicationController
   def create
-    render json: Score.create(score_params)
+    score = Score.create(score_params)
+    Score.filter_scores(score.level_id)
+    render json: score
   end
 
   def score_params
