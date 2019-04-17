@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require "JSON"
 Level.destroy_all
 Block.destroy_all
 Score.destroy_all
@@ -25,7 +26,9 @@ test_level.blocks << Block.create(x: 450, y: 225, width: 50, height: 25, style: 
 test_level.blocks << Block.create(x: 0, y: 250, width: 180, height: 15, style: "limegreen", status: "goal")
 test_level.blocks << Block.create(x: 420, y: 350, width: 25, height: 25, style: "gold", status: "coin")
 test_level.blocks << Block.create(x: 763, y: 260, width: 25, height: 25, style: "gold", status: "coin")
-test_level.blocks << Block.create(x: 600, y: 75, width: 25, height: 25, style: "gold", status: "coin")
+block1_movement = JSON.generate({color: "limegreen", dx: 1, dy: 0, maxX: 100, minX: 0, maxY: 0, minY: 0})
+test_level.blocks << Block.create(x: 600, y: 75, width: 25, height: 25, style: "mover#{block1_movement}", status: "coin")
+#config: {color: "red", dx: 1, dy: 0, maxX: 100, minX, maxY maxY: y}
 
 test_level2 = Level.create(name: "Test Level 2", startPositionX: 1, startPositionY: 526)
 test_level2.scores << Score.create(value: 0)
@@ -33,14 +36,14 @@ test_level2.scores << Score.create(value: 0)
 test_level2.blocks << Block.create(x: 0, y: 600, width: 300, height: 100, style: "black", status: "platform")
 test_level2.blocks << Block.create(x: 400, y: 600, width: 75, height: 100, style: "black", status: "platform")
 test_level2.blocks << Block.create(x: 600, y: 600, width: 50, height: 100, style: "black", status: "platform")
-test_level2.blocks << Block.create(x: 810, y: 600, width: 40, height: 100, style: "black", status: "platform")
-test_level2.blocks << Block.create(x: 980, y: 600, width: 220, height: 100, style: "black", status: "platform")
+test_level2.blocks << Block.create(x: 800, y: 600, width: 40, height: 100, style: "black", status: "platform")
+test_level2.blocks << Block.create(x: 950, y: 600, width: 220, height: 100, style: "black", status: "platform")
 
 test_level2.blocks << Block.create(x: 0, y: 350, width: 300, height: 199, style: "black", status: "platform")
 test_level2.blocks << Block.create(x: 400, y: 350, width: 75, height: 199, style: "black", status: "platform")
 test_level2.blocks << Block.create(x: 600, y: 450, width: 50, height: 99, style: "black", status: "platform")
-test_level2.blocks << Block.create(x: 810, y: 450, width: 40, height: 99, style: "black", status: "platform")
-test_level2.blocks << Block.create(x: 980, y: 500, width: 100, height: 49, style: "black", status: "platform")
+test_level2.blocks << Block.create(x: 800, y: 450, width: 40, height: 99, style: "black", status: "platform")
+test_level2.blocks << Block.create(x: 950, y: 500, width: 100, height: 49, style: "black", status: "platform")
 
 test_level2.blocks << Block.create(x: 650, y: 350, width: 550, height: 25, style: "black", status: "platform")
 test_level2.blocks << Block.create(x: 50, y: 250, width: 600, height: 25, style: "black", status: "platform")
