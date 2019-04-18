@@ -9,6 +9,9 @@ require "JSON"
 Level.destroy_all
 Block.destroy_all
 Score.destroy_all
+Game.destroy_all
+
+test_game = Game.create(name: "Test Game")
 blank_level = Level.create(name: "Blank Level", startPositionX: 0, startPositionY: 0)
 blank_level.scores << Score.create(value: 0)
 blank_level.blocks << Block.create(x: 0, y: 100, width: 100, height: 5, style: "orange", status: "platform")
@@ -75,3 +78,7 @@ test_level3.blocks << Block.create(x: 500, y: 50, width: 25, height: 25, style: 
 test_level3.blocks << Block.create(x: 700, y: 50, width: 25, height: 25, style: "gold", status: "coin")
 test_level3.blocks << Block.create(x: 700, y: 50, width: 25, height: 25, style: "gold", status: "coin")
 test_level3.blocks << Block.create(x: 950, y: 400, width: 25, height: 25, style: "gold", status: "coin")
+
+test_game.levels << test_level
+test_game.levels << test_level2
+test_game.levels << test_level3
