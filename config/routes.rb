@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :blocks, :levels, :scores, :games
+      # get '/api/v1/games/:id/levels/:id', to: 'levels#show', as: 'level'
     end
   end
 end
