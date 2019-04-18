@@ -16,7 +16,7 @@ blank_level = Level.create(name: "Blank Level", startPositionX: 0, startPosition
 blank_level.scores << Score.create(value: 0)
 blank_level.blocks << Block.create(x: 0, y: 100, width: 100, height: 5, style: "orange", status: "platform")
 
-test_level = Level.create(name: "Test Level", startPositionX: 30, startPositionY: 400)
+test_level = Level.create(name: "Test Level", startPositionX: 30, startPositionY: 400, background: "url(./assets/jungle/backgroundLarge.png)")
 test_level.scores << Score.create(value: 0)
 
 test_level.blocks << Block.create(x: 0, y: 650, width: 150, height: 50, style: "black", status: "platform")
@@ -35,7 +35,7 @@ coin3_movement = JSON.generate({color: "gold", dx: 1, dy: 0, maxX: 100, minX: 0,
 test_level.blocks << Block.create(x: 600, y: 75, width: 25, height: 25, style: "mover#{coin3_movement}", status: "coin")
 #config: {color: "red", dx: 1, dy: 0, maxX: 100, minX, maxY maxY: y, simultaneous: 0}
 
-test_level2 = Level.create(name: "Test Level 2", startPositionX: 1, startPositionY: 526)
+test_level2 = Level.create(name: "Test Level 2", startPositionX: 1, startPositionY: 526, background: "url(./assets/jungle/backgroundLarge.png)")
 test_level2.scores << Score.create(value: 0)
 block_movt = JSON.generate({color: "black", dx: 1, dy: 0, maxX: 20, minX: -10, maxY: 0, minY: 0})
 block_movt2 = JSON.generate({color: "black", dx: 1, dy: 0, maxX: 30, minX: -10, maxY: 0, minY: 0})
@@ -57,7 +57,7 @@ test_level2.blocks << Block.create(x: 50, y: 250, width: 600, height: 25, style:
 test_level2.blocks << Block.create(x: 650, y: 250, width: 25, height: 100, style: "black", status: "platform")
 test_level2.blocks << Block.create(x: 600, y: 150, width: 25, height: 25, style: "limegreen", status: "goal")
 
-test_level3 = Level.create(name: "Test Level 3", startPositionX: 1, startPositionY: 1)
+test_level3 = Level.create(name: "Test Level 3", startPositionX: 1, startPositionY: 1, background: "url(./assets/jungle/backgroundLarge.png)" )
 test_level3.scores << Score.create(value: 0)
 
 test_level3.blocks << Block.create(x: 0, y: 150, width: 50, height: 500, style: "black", status: "platform")
