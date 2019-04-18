@@ -1,6 +1,7 @@
 class Level < ApplicationRecord
   has_many :blocks
   has_many :scores
+  belongs_to :game
   accepts_nested_attributes_for :blocks
 
   def high_score
