@@ -5,8 +5,6 @@ class Api::V1::GamesController < ApplicationController
 
   def show
     game = Game.find(params[:id])
-    json_obj = {id: game.id, name: game.name}
-
     render json: game
   end
 
