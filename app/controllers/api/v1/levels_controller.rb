@@ -23,6 +23,6 @@ class Api::V1::LevelsController < ApplicationController
   end
 
   def level_params
-    params.require(:level).permit(:name, :startPositionX, :startPositionY, :background, blocks_attributes: [:id, :x, :y, :height, :width, :status, :style, :level_id])
+    params.require(:level).permit(:name, :startPositionX, :startPositionY, :background, :game_id, blocks_attributes: [:id, :x, :y, :height, :width, :status, :style, :level_id])
   end
 end
